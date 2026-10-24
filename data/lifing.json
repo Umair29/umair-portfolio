@@ -1,13 +1,13 @@
 [
   { 
     "type": "photo", 
-    "src": "images/cafe.jpg", 
-    "text": "Rainy evening, best chai of the month." 
+    "src": "images/cloud_1.jpg", 
+    "text": "Could be a cool Album cover" 
   },
   {
     "type": "video",
-    "src": "",
-    "text": "[Text about a video.]"
+    "src": "images/video_1",
+    "text": "Walking the yellow"
   },
   {
     "type": "note",
