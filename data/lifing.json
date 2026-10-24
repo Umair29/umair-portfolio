@@ -1,12 +1,12 @@
 [
   { 
     "type": "photo", 
-    "src": "images/cloud_1.JPG", 
+    "src": "images/pic_1.jpg", 
     "text": "Could be a cool Album cover" 
   },
   {
     "type": "video",
-    "src": "images/video_1.mp4",
+    "src": "images/vid_1.mp4",
     "text": "Walking the yellow"
   },
   {
@@ -15,17 +15,42 @@
   },
   {
     "type": "photo",
-    "src": "images/cloud_2.jpg",
+    "src": "images/pic_2.jpg",
     "text": "[One more moment.]"
   },
   {
     "type": "photo",
-    "src": "",
+    "src": "images/pic_3.jpg",
     "text": "[One more moment.]"
   },
   {
     "type": "photo",
-    "src": "",
+    "src": "images/pic_4.jpg",
+    "text": "[One more moment.]"
+  },
+  {
+    "type": "photo",
+    "src": "images/pic_5.jpg",
+    "text": "[One more moment.]"
+  },
+  {
+    "type": "photo",
+    "src": "images/pic_6.jpg",
+    "text": "[One more moment.]"
+  },
+  {
+    "type": "photo",
+    "src": "images/pic_7.jpg",
+    "text": "[One more moment.]"
+  },
+  {
+    "type": "photo",
+    "src": "images/pic_8.jpg",
+    "text": "[One more moment.]"
+  },
+  {
+    "type": "photo",
+    "src": "images/pic_8.jpg",
     "text": "[One more moment.]"
   }
 ]
