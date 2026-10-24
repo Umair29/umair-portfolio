@@ -2,7 +2,8 @@
   { 
     "type": "photo", 
     "src": "images/cafe.jpg", 
-    "text": "Rainy evening, best chai of the month." },
+    "text": "Rainy evening, best chai of the month." 
+  },
   {
     "type": "video",
     "src": "",
