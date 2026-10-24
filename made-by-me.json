@@ -1,0 +1,22 @@
+[
+  {
+    "kind": "3D",
+    "src": "",
+    "caption": "[Name of the model, tool used]"
+  },
+  {
+    "kind": "3D",
+    "src": "",
+    "caption": "[Another model]"
+  },
+  {
+    "kind": "2D",
+    "src": "",
+    "caption": "[Name of the artwork, tool used]"
+  },
+  {
+    "kind": "2D",
+    "src": "",
+    "caption": "[Another piece]"
+  }
+]

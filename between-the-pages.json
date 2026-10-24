@@ -1,0 +1,17 @@
+[
+  {
+    "kind": "Reading",
+    "title": "[Book title]",
+    "note": "[One line on what you think so far.]"
+  },
+  {
+    "kind": "Reading",
+    "title": "[Book or article]",
+    "note": "[Why it’s on your list.]"
+  },
+  {
+    "kind": "Writing",
+    "title": "[Piece title]",
+    "note": "[What it is and how far along you are.]"
+  }
+]

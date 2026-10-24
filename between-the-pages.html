@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body style="--bg:#1f3d2b;--ink:#f1e6c8;--accent:#f2a65a">
+<body data-page="between-the-pages" style="--bg:#1f3d2b;--ink:#f1e6c8;--accent:#f2a65a">
 <nav aria-label="Main">
   <a href="index.html#hello">Home</a>
   <a href="index.html#selfhelp">Projects</a>
@@ -22,17 +22,11 @@
     <span class="plaque">Side rooms</span>
     <h2>Between the Pages</h2>
     <p class="sub">What I’m reading and what I’m writing.</p>
-    <h3>Reading</h3>
-    <div class="pages">
-      <article class="page"><span class="kind">Reading</span><strong>[Book title]</strong><p>[One line on what you think so far.]</p></article>
-      <article class="page"><span class="kind">Reading</span><strong>[Book or article]</strong><p>[Why it’s on your list.]</p></article>
-    </div>
-    <h3>Writing</h3>
-    <div class="pages">
-      <article class="page"><span class="kind">Writing</span><strong>[Piece title]</strong><p>[What it is and how far along you are.]</p></article>
-    </div>
+    <div data-group="Reading"><h3>Reading</h3><div class="pages"></div></div>
+    <div data-group="Writing"><h3>Writing</h3><div class="pages"></div></div>
     <a class="btn ghost back" href="index.html#side">← Back to the side rooms</a>
   </div>
 </main>
+<script src="gallery.js"></script>
 </body>
 </html>

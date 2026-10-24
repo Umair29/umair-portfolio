@@ -1,0 +1,21 @@
+[
+  {
+    "type": "photo",
+    "src": "",
+    "text": "[A few words about this photo: where, when, why it stuck.]"
+  },
+  {
+    "type": "video",
+    "src": "",
+    "text": "[Text about a video.]"
+  },
+  {
+    "type": "note",
+    "text": "[A loose line of text with no picture.]"
+  },
+  {
+    "type": "photo",
+    "src": "",
+    "text": "[One more moment.]"
+  }
+]
