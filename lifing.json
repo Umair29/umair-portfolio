@@ -1,9 +1,8 @@
 [
-  {
-    "type": "photo",
-    "src": "",
-    "text": "[A few words about this photo: where, when, why it stuck.]"
-  },
+  { 
+    "type": "photo", 
+    "src": "images/cafe.jpg", 
+    "text": "Rainy evening, best chai of the month." },
   {
     "type": "video",
     "src": "",
