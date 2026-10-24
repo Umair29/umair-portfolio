@@ -1,0 +1,87 @@
+:root{
+  --bg:#c9b8f0; --ink:#1b1030; --accent:#ff5a36;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:1.3rem;line-height:1.55;transition:background .9s ease,color .9s ease}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.room{min-height:100vh;padding:clamp(5.5rem,10vw,8rem) clamp(1.2rem,6vw,6rem) clamp(3rem,9vw,7rem);position:relative;display:flex;flex-direction:column;justify-content:center}
+.wrap{max-width:62rem}
+h1,h2{font-family:var(--display);font-weight:800;line-height:.92;letter-spacing:-.03em}
+h1{font-size:clamp(4.5rem,22vw,17rem)}
+h1 span{display:inline-block;transition:transform .35s cubic-bezier(.3,1.8,.5,1)}
+h1 span:hover{transform:translateY(-.08em) rotate(-8deg)}
+h2{font-size:clamp(2.8rem,10vw,7.5rem);margin-bottom:1.5rem}
+p{max-width:34em;margin-bottom:1rem}
+.lede{font-size:clamp(1.5rem,3.4vw,2.4rem);line-height:1.25;max-width:24em;margin-top:1.5rem}
+.plaque{font-family:var(--display);font-size:.95rem;font-weight:400;margin-bottom:1.2rem;display:inline-block;border:2px solid currentColor;border-radius:99px;padding:.15rem .9rem}
+.tags{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0 1.6rem}
+.tags li{font-family:var(--display);font-size:.9rem;background:var(--ink);color:var(--bg);padding:.2rem .8rem;border-radius:4px;transition:background .9s,color .9s}
+.btn{display:inline-block;font-family:var(--display);font-weight:800;font-size:1.05rem;text-decoration:none;background:var(--accent);color:#fff;padding:.8rem 1.5rem;border-radius:99px;margin:.3rem .5rem .3rem 0;transition:transform .2s}
+.btn:hover{transform:rotate(-3deg) scale(1.04)}
+.btn.ghost{background:transparent;color:inherit;border:2px solid currentColor}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;gap:clamp(1.1rem,3.5vw,2.6rem);padding:.95rem clamp(1.2rem,6vw,6rem);background:var(--bg);font-family:var(--display);font-size:1.05rem;overflow-x:auto;white-space:nowrap;transition:background .9s ease}
+nav a{text-decoration:none;padding-bottom:.15rem;border-bottom:3px solid transparent;transition:border-color .25s}
+nav a:hover,nav a[aria-current="true"]{border-bottom-color:var(--accent)}
+
+/* about */
+.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:2rem 3rem;margin-top:1.5rem}
+.about h3{font-family:var(--display);font-size:1.5rem;line-height:1.1;display:inline-block;border-bottom:3px solid var(--accent);margin-bottom:.8rem}
+.about .tags{margin-top:0}
+
+/* A Bloody Affair */
+#affair{--blood:#c3111f}
+#affair h2{font-style:normal;color:var(--blood);text-shadow:0 .04em 0 #000}
+#affair p{color:#e9d5cf}
+#affair .drip{position:absolute;left:0;top:0;width:100%;height:5rem;fill:var(--blood)}
+#affair .tags li{background:var(--blood);color:#fff}
+
+/* World of the Absurd */
+#absurd h2{transform:rotate(-2.5deg);transform-origin:left}
+#absurd h2 em{font-family:var(--serif);font-weight:400;display:block;transform:rotate(5deg) translateX(1.5rem)}
+.blob{position:absolute;right:6vw;top:14vh;width:clamp(8rem,22vw,18rem);aspect-ratio:1;background:var(--accent);border-radius:62% 38% 55% 45%/48% 60% 40% 52%;animation:wob 9s ease-in-out infinite alternate}
+@keyframes wob{to{border-radius:40% 60% 38% 62%/60% 40% 58% 42%;transform:rotate(25deg)}}
+
+/* hobbies */
+.hob h3{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,5vw,3.2rem);letter-spacing:-.02em;line-height:1;margin:4rem 0 .4rem}
+.hob .sub{font-size:1.15rem;margin-bottom:1.5rem}
+.works{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.5rem}
+.work{position:relative}
+.work .ph,.work img,.work video{width:100%;aspect-ratio:1;object-fit:cover;display:block;border:3px solid var(--ink);background:var(--accent)}
+.work .tag{position:absolute;top:.6rem;left:.6rem;font-family:var(--display);font-weight:800;font-size:.85rem;background:var(--ink);color:var(--bg);padding:.1rem .6rem;border-radius:4px}
+.work figcaption,.memo p{font-size:1.05rem;line-height:1.3;margin:.6rem 0 0}
+.scatter{display:flex;flex-wrap:wrap;gap:2.5rem 3.5rem;align-items:flex-start;padding:1rem 0 2rem}
+.memo{width:min(18rem,100%);background:#fff;color:#1b1030;padding:.7rem .7rem 1rem;box-shadow:6px 6px 0 var(--ink);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.memo .ph,.memo img,.memo video{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--accent)}
+.memo:nth-child(1){transform:rotate(-3deg)}
+.memo:nth-child(2){transform:rotate(2.5deg);margin-top:2.5rem;width:min(14rem,100%)}
+.memo:nth-child(3){transform:rotate(-1.5deg);margin-top:.8rem}
+.memo:nth-child(4){transform:rotate(3deg);margin-top:3rem;width:min(15rem,100%)}
+.memo:hover{transform:rotate(0) scale(1.04);z-index:2}
+.memo.note{background:var(--ink);color:var(--bg);box-shadow:none;padding:1.2rem;font-size:1.25rem;line-height:1.3;width:min(15rem,100%)}
+.memo.note p{margin:0;font-size:1.25rem}
+.pages{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.5rem 2.5rem}
+.page{border-top:3px solid var(--ink);padding-top:.7rem}
+.page .kind{font-family:var(--display);font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
+.page strong{display:block;font-family:var(--display);font-size:1.5rem;line-height:1.1;margin:.2rem 0 .3rem}
+.page p{font-size:1.05rem;line-height:1.35;margin:0}
+footer.room{min-height:60vh}
+.links a{font-family:var(--display);font-size:clamp(1.6rem,4vw,2.8rem);font-weight:800;display:block;text-decoration-thickness:3px;text-underline-offset:.15em;width:max-content}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* hobby doors (cards on the main page) */
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.5rem;margin-top:2rem}
+.door{aspect-ratio:3/4;padding:1.2rem;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none;font-family:var(--display);font-weight:800;font-size:1.9rem;line-height:1.05;background:var(--ink);color:var(--bg);transition:transform .3s}
+.door small{font-family:var(--serif);font-weight:400;font-size:1.05rem;line-height:1.3;margin-top:.4rem}
+.door .go{font-family:var(--display);font-size:.95rem;margin-top:1rem}
+.door:nth-child(1){border-radius:50% 50% 0 0}
+.door:nth-child(2){border-radius:1.5rem;transform:rotate(2deg)}
+.door:nth-child(3){border-radius:0 40% 0 40%;background:var(--accent);color:#fff}
+.door:hover{transform:rotate(-3deg) translateY(-6px)}
+.back{margin-top:3.5rem}
+

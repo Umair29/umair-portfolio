@@ -8,60 +8,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#c9b8f0; --ink:#1b1030; --accent:#ff5a36;
-  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
-  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
-}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:1.3rem;line-height:1.55;transition:background .9s ease,color .9s ease}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.room{min-height:100vh;padding:clamp(3rem,9vw,7rem) clamp(1.2rem,6vw,6rem);position:relative;display:flex;flex-direction:column;justify-content:center}
-.wrap{max-width:62rem}
-h1,h2{font-family:var(--display);font-weight:800;line-height:.92;letter-spacing:-.03em}
-h1{font-size:clamp(4.5rem,22vw,17rem)}
-h1 span{display:inline-block;transition:transform .35s cubic-bezier(.3,1.8,.5,1)}
-h1 span:hover{transform:translateY(-.08em) rotate(-8deg)}
-h2{font-size:clamp(2.8rem,10vw,7.5rem);margin-bottom:1.5rem}
-p{max-width:34em;margin-bottom:1rem}
-.lede{font-size:clamp(1.5rem,3.4vw,2.4rem);line-height:1.25;max-width:24em;margin-top:1.5rem}
-.plaque{font-family:var(--display);font-size:.95rem;font-weight:400;margin-bottom:1.2rem;display:inline-block;border:2px solid currentColor;border-radius:99px;padding:.15rem .9rem}
-.tags{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0 1.6rem}
-.tags li{font-family:var(--display);font-size:.9rem;background:var(--ink);color:var(--bg);padding:.2rem .8rem;border-radius:4px;transition:background .9s,color .9s}
-.btn{display:inline-block;font-family:var(--display);font-weight:800;font-size:1.05rem;text-decoration:none;background:var(--accent);color:#fff;padding:.8rem 1.5rem;border-radius:99px;margin:.3rem .5rem .3rem 0;transition:transform .2s}
-.btn:hover{transform:rotate(-3deg) scale(1.04)}
-.btn.ghost{background:transparent;color:inherit;border:2px solid currentColor}
-
-/* A Bloody Affair */
-#affair{--blood:#c3111f}
-#affair h2{font-style:normal;color:var(--blood);text-shadow:0 .04em 0 #000}
-#affair p{color:#e9d5cf}
-#affair .drip{position:absolute;left:0;top:0;width:100%;height:5rem;fill:var(--blood)}
-#affair .tags li{background:var(--blood);color:#fff}
-
-/* World of the Absurd */
-#absurd h2{transform:rotate(-2.5deg);transform-origin:left}
-#absurd h2 em{font-family:var(--serif);font-weight:400;display:block;transform:rotate(5deg) translateX(1.5rem)}
-.blob{position:absolute;right:6vw;top:14vh;width:clamp(8rem,22vw,18rem);aspect-ratio:1;background:var(--accent);border-radius:62% 38% 55% 45%/48% 60% 40% 52%;animation:wob 9s ease-in-out infinite alternate}
-@keyframes wob{to{border-radius:40% 60% 38% 62%/60% 40% 58% 42%;transform:rotate(25deg)}}
-
-/* hobbies */
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.5rem;margin-top:2rem}
-.tile{aspect-ratio:3/4;padding:1.2rem;display:flex;flex-direction:column;justify-content:flex-end;font-family:var(--display);font-weight:800;font-size:1.6rem;line-height:1.05;background:var(--ink);color:var(--bg);transition:transform .3s}
-.tile small{font-family:var(--serif);font-weight:400;font-size:1.05rem;line-height:1.3;margin-top:.4rem}
-.tile:nth-child(1){border-radius:50% 50% 0 0}
-.tile:nth-child(2){border-radius:1.5rem;transform:rotate(2deg)}
-.tile:nth-child(3){border-radius:0 40% 0 40%;background:var(--accent);color:#fff}
-.tile:hover{transform:rotate(-3deg) translateY(-6px)}
-footer.room{min-height:60vh}
-.links a{font-family:var(--display);font-size:clamp(1.6rem,4vw,2.8rem);font-weight:800;display:block;text-decoration-thickness:3px;text-underline-offset:.15em;width:max-content}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<nav aria-label="Main">
+  <a href="#hello">Home</a>
+  <a href="#selfhelp">Projects</a>
+  <a href="#side">Hobbies</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
 
 <main>
 <section class="room" id="hello" data-bg="#c9b8f0" data-ink="#1b1030" data-accent="#ff5a36">
@@ -88,7 +45,7 @@ footer.room{min-height:60vh}
   <div class="wrap">
     <span class="plaque">Game</span>
     <h2>World of the <em>Absurd</em></h2>
-    <p>[World of the Absurd is a journey of a girl who has woken up in a strange place. The girl doesn't remember her name so, she ventures in the world asking around if anyone can help her sort out the mystery?]</p>
+    <p>[A two-sentence pitch. What does the player do, and what makes it ridiculous in a good way?]</p>
     <ul class="tags"><li>Godot</li><li>2D</li><li>[Genre]</li></ul>
     <a class="btn" href="#" style="color:#ffb3c7">Play it</a><a class="btn ghost" href="#">Devlog</a>
   </div>
@@ -110,10 +67,34 @@ footer.room{min-height:60vh}
     <span class="plaque">Side rooms</span>
     <h2>Things I make for fun.</h2>
     <p>Not every project needs a launch. These are the experiments.</p>
-    <div class="tiles">
-      <div class="tile">3D modeling<small>[Swap in a render of your best model]</small></div>
-      <div class="tile">Photography<small>[Swap in one photo you love]</small></div>
-      <div class="tile">Sketchbook<small>[Drawing practice for game art]</small></div>
+    <div class="doors">
+      <a class="door" href="made-by-me.html">Made by Me<small>2D and 3D work: characters, props, little worlds.</small><span class="go">Open the room →</span></a>
+      <a class="door" href="lifing.html">Lifing<small>Photos and videos from ordinary days, with notes.</small><span class="go">Open the room →</span></a>
+      <a class="door" href="between-the-pages.html">Between the Pages<small>What I’m reading and what I’m writing.</small><span class="go">Open the room →</span></a>
+    </div>
+  </div>
+</section>
+<section class="room" id="about" data-bg="#f3d98b" data-ink="#3b1f0a" data-accent="#b3261e">
+  <div class="wrap">
+    <span class="plaque">About</span>
+    <h2>Who’s behind the rooms.</h2>
+    <div class="about">
+      <div>
+        <h3>Education</h3>
+        <p>Software Engineering at Government College University Faisalabad (GCUF), 2023–2027.</p>
+        <p>CGPA: [x.xx]</p>
+        <p>Coursework: computer architecture, parallel and distributed computing, software quality assurance.</p>
+      </div>
+      <div>
+        <h3>Skills</h3>
+        <ul class="tags">
+          <li>Godot 4</li><li>GDScript</li><li>2D &amp; 3D modeling</li><li>Photography</li><li>[Add yours]</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Background</h3>
+        <p>[Two or three sentences: where you’re from, what got you into making games, and what you want to build next.]</p>
+      </div>
     </div>
   </div>
 </section>
@@ -132,6 +113,7 @@ footer.room{min-height:60vh}
 
 <script>
 const root = document.documentElement.style;
+const navLinks = document.querySelectorAll("nav a");
 const rooms = document.querySelectorAll("[data-bg]");
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => {
@@ -139,6 +121,8 @@ const io = new IntersectionObserver(entries => {
       root.setProperty("--bg", e.target.dataset.bg);
       root.setProperty("--ink", e.target.dataset.ink);
       root.setProperty("--accent", e.target.dataset.accent);
+      const target = ["selfhelp","absurd","affair"].includes(e.target.id) ? "selfhelp" : e.target.id;
+      navLinks.forEach(a => a.setAttribute("aria-current", a.getAttribute("href") === "#" + target));
     }
   });
 }, { threshold: 0.55 });
