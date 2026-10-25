@@ -1,0 +1,23 @@
+{
+  "video": "",
+  "about": [
+    "[What the game is, in a couple of sentences.]",
+    "[What makes it absurd, who the player is, and where the game is at right now.]"
+  ],
+  "entries": [
+    {
+      "src": "",
+      "title": "[Optional heading]",
+      "text": "[A few lines about what this picture shows.]"
+    },
+    {
+      "src": "",
+      "title": "[Optional heading]",
+      "text": "[Another picture, another note.]"
+    },
+    {
+      "src": "",
+      "text": "[Headings are optional.]"
+    }
+  ]
+}

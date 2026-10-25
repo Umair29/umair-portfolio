@@ -20,8 +20,12 @@ const fill = (box, items, build) => {
 };
 
 const page = document.body.dataset.page;
-fetch("data/" + page + ".json")
-  .then(r => r.json())
+const file = "data/" + page + ".json";
+fetch(file, { cache: "no-cache" })
+  .then(r => {
+    if (!r.ok) throw new Error("Could not find " + file + " (HTTP " + r.status + ")");
+    return r.json();
+  })
   .then(items => {
     if (page === "lifing") {
       fill(document.querySelector(".scatter"), items, i => {
@@ -32,6 +36,29 @@ fetch("data/" + page + ".json")
         f.append(media(i), make("p", "", i.text));
         return f;
       });
+    } else if (page.endsWith("-devlog")) {
+      const frame = document.querySelector(".devvideo");
+      if (items.video && /youtube\.com\/embed|player\.vimeo\.com/.test(items.video)) {
+        const f = document.createElement("iframe");
+        f.src = items.video; f.title = "Gameplay video"; f.loading = "lazy"; f.allowFullscreen = true;
+        frame.appendChild(f);
+      } else {
+        frame.appendChild(media({ src: items.video || "" }));
+      }
+      const about = document.querySelector(".devabout");
+      (items.about || []).forEach(t => about.appendChild(make("p", "", t)));
+      if (!items.about || !items.about.length) about.parentElement.hidden = true;
+      const list = document.querySelector(".entries");
+      (items.entries || []).forEach(e => {
+        const f = make("figure", "entry");
+        const img = media(e); img.classList.add("eimg");
+        const t = make("div", "etext");
+        if (e.title) t.appendChild(make("h4", "", e.title));
+        t.appendChild(make("p", "", e.text));
+        f.append(img, t);
+        list.appendChild(f);
+      });
+      if (!items.entries || !items.entries.length) list.parentElement.hidden = true;
     } else if (page === "made-by-me") {
       document.querySelectorAll("[data-group]").forEach(g => {
         fill(g.querySelector(".works"), items.filter(i => i.kind === g.dataset.group), i => {
@@ -50,7 +77,12 @@ fetch("data/" + page + ".json")
       });
     }
   })
-  .catch(() => {
+  .catch(err => {
+    console.error("gallery.js:", err);
+    const local = location.protocol === "file:";
+    const msg = local
+      ? "This page can’t load its data when opened as a file. View it on your live site or run a local server."
+      : "Nothing here yet.";
     const w = document.querySelector(".hob");
-    w.insertBefore(make("p", "", "Nothing here yet."), w.querySelector(".back"));
+    w.insertBefore(make("p", "", msg), w.querySelector(".back"));
   });
